@@ -14,8 +14,8 @@
 #define COLEMAK 1
 #define LOWER   2
 #define RAISE   3
-#define NAV     4
-#define ADJUST  5
+// #define NAV     4
+#define ADJUST  4
 
 / {
 	keymap {
@@ -32,7 +32,7 @@
 	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                      &kp Y     &kp U   &kp I     &kp O   &kp P    &kp BSLH
 	&kp LCTRL &kp A &kp S &kp D &kp F &kp G                                                      &kp H     &kp J   &kp K     &kp L   &kp SEMI &kp SQT
 	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &bt BT_CLR &bt BT_NXT        &kp LSHFT &kp LSHFT     &kp N     &kp M   &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                &kp LGUI &kp LALT &mo LOWER &kp SPACE &kp RET        &kp BSPC  &mt NAV SPACE &mo RAISE &kp TAB &kp RALT
+	                &kp LGUI &kp LALT &mo LOWER &kp SPACE &kp RET        &kp BSPC  &lt NAV SPACE &mo RAISE &kp TAB &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -96,7 +96,7 @@
 	&ext_power EP_TOG &trans           &trans            &trans          &trans          &trans                                    &trans &kp F7 &kp F8 &kp F9 &kp F10 &trans
 	&rgb_ug RGB_EFF   &rgb_ug RGB_SPI  &rgb_ug RGB_SAI   &rgb_ug RGB_HUI &rgb_ug RGB_BRI &trans                                    &trans &kp F4 &kp F5 &kp F6 &kp F11 &trans
 	&rgb_ug RGB_EFR   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD   &rgb_ug RGB_HUD &rgb_ug RGB_BRD &trans &trans &trans       &trans &trans  &trans &kp F1 &kp F2 &kp F3 &kp F12 &trans
-	                                  &trans            &trans          &trans          &trans &trans &trans       &trans &trans  &trans &trans
+                                           &trans            &trans          &trans          &trans &trans &trans       &trans &trans  &trans &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

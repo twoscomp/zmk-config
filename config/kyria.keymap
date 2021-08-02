@@ -14,7 +14,7 @@
 #define COLEMAK 1
 #define LOWER   2
 #define RAISE   3
-// #define NAV     4
+// #define NAV  4
 #define ADJUST  4
 
 / {
@@ -32,7 +32,7 @@
 	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                      &kp Y     &kp U   &kp I     &kp O   &kp P    &kp BSLH
 	&kp LCTRL &kp A &kp S &kp D &kp F &kp G                                                      &kp H     &kp J   &kp K     &kp L   &kp SEMI &kp SQT
 	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &bt BT_CLR &bt BT_NXT        &kp LSHFT &kp LSHFT     &kp N     &kp M   &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                &kp LGUI &kp LALT &mo LOWER &kp SPACE &kp RET        &kp BSPC  &lt NAV SPACE &mo RAISE &kp TAB &kp RALT
+	                &kp LGUI &kp LALT &mo LOWER &kp SPACE &kp RET        &kp BSPC  &kp SPACE &mo RAISE &kp TAB &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

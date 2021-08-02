@@ -77,7 +77,7 @@
 // | ____ |  %   |  ^   |  [   |  ]   |  ~   | ____ | ____ |                 | ____ | ____ |  &   |  =   |  ,   |  .   | / ?  | - _  |
 //                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
-	&trans  &kp EXCL  &kp AT    &kp LBRC &kp RBRC &kp PIPE                                     &trans   &kp UNDER    &trans       &trans     &trans    &kp BLSH
+	&trans  &kp EXCL  &kp AT    &kp LBRC &kp RBRC &kp PIPE                                     &trans   &kp UNDER    &trans       &trans     &trans    &kp BSLH
 	&trans  &kp HASH  &kp DLLR  &kp LPAR &kp RPAR &kp GRAVE                                    &kp PLUS &kp KP_MINUS &kp KP_SLASH &kp STAR   &kp PRCNT &kp SQT
 	&trans  &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp TILDE &trans &trans       &trans &trans  &kp AMPS &kp KP_EQUAL &kp KP_COMMA &kp KP_DOT &kp FSLH  &trans
 	                            &trans   &trans   &trans    &trans &trans       &trans &trans  &trans   &trans       &trans

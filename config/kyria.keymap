@@ -79,7 +79,7 @@
 			bindings = <
 	&trans  &kp EXCL  &kp AT    &kp LBRC &kp RBRC &kp PIPE                                     &trans   &kp UNDER    &trans       &trans     &trans    &kp BSLH
 	&trans  &kp HASH  &kp DLLR  &kp LPAR &kp RPAR &kp GRAVE                                    &kp PLUS &kp KP_MINUS &kp KP_SLASH &kp STAR   &kp PRCNT &kp SQT
-	&trans  &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp TILDE  &trans &trans       &trans &trans &kp AMPS &kp KP_EQUAL &kp KP_COMMA &kp KP_DOT &kp FSLH  &trans
+	&trans  &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp TILDE  &trans &trans       &trans &trans &kp AMPS &kp KP_EQUAL &kp KP_COMMA &kp KP_DOT &kp FSLH  &kp MINUS
 	                            &trans   &trans   &mo ADJUST &trans &trans       &trans &trans &trans   &trans       &trans
 			>;
 
@@ -88,15 +88,15 @@
 
 		nav_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | PgUp | Home |  Up  | End  | ____ | Slck |
-// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | PgDn | Left | Down | Right| ____ | Cclk |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | PgUp | PgDn | Home | End  | ____ | Slck |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | Left | Down |  Up  | Right| ____ | Cclk |
 // | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
 //                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
-	&trans &trans &trans &trans &trans &trans                                    &kp PG_UP &kp HOME &kp UP   &kp END   &trans &kp SLCK
-	&trans &trans &trans &trans &trans &trans                                    &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &kp CLCK
-	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans   &trans   &trans    &trans &trans
-	                     &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans   &trans
+	&trans &trans &trans &trans &trans &trans                                    &kp PG_UP &kp PG_DN &kp HOME &kp END   &trans &kp SLCK
+	&trans &trans &trans &trans &trans &trans                                    &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &trans &kp CLCK
+	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans    &trans   &trans    &trans &trans
+	                     &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans    &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

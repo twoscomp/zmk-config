@@ -88,14 +88,14 @@
 
 		nav_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | PgUp | PgDn | Home | End  | ____ | Slck |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | Home | PgDn | PgUp | End  | ____ | Slck |
 // | ____ | ____ | ____ | ____ | ____ | ____ |                                             | Left | Down |  Up  | Right| ____ | Cclk |
 // | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
 //                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
-	&trans &trans &trans &trans &trans &trans                                    &kp PG_UP &kp PG_DN &kp HOME &kp END   &trans &kp SLCK
-	&trans &trans &trans &trans &trans &trans                                    &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &trans &kp CLCK
-	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans    &trans   &trans    &trans &trans
+	&trans &trans &trans &trans &trans &trans                                    &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans &kp SLCK
+	&trans &trans &trans &trans &trans &trans                                    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans &kp CLCK
+	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans    &trans    &trans    &trans &trans
 	                     &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans    &trans
 			>;
 

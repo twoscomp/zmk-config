@@ -12,10 +12,11 @@
 
 #define COLEMAK 0
 #define QWERTY  1
-#define LOWER   2
-#define RAISE   3
-#define NAV     4
-#define ADJUST  5
+#define GAME    2
+#define LOWER   3
+#define RAISE   4
+#define NAV     5
+#define ADJUST  6
 
 / {
 	keymap {
@@ -25,20 +26,20 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q   |  W   |  F   |  P   |  B   |                                       |   J   |   L   |   U   |   Y   |   :   |   \   |
 // |  CTRL |  A   |  R   |  S   |  T   |  G   |                                       |   M   |   N   |   E   |   I   |   O   |   '   |
-// | SHIFT |  Z   |  X   |  C   |  D   |  V   | ____  | ____ |         | ____ | QRTY  |   K   |   H   |   ,   |   .   |   /   | SHIFT |
+// | SHIFT |  Z   |  X   |  C   |  D   |  V   | ____  | ____ |         | GAMG | QRTY  |   K   |   H   |   ,   |   .   |   /   | SHIFT |
 //                       | GUI  | ALT  | LWR  | SPACE | RET  |         | BSPC | SPACE |  RSE  |  TAB  | R-ALT |
 //                                                                              /NAV
 			bindings = <
 	&kp ESC   &kp Q &kp W &kp F &kp P &kp B                                                      &kp J     &kp L   &kp U     &kp Y   &kp SEMI &kp BSLH
 	&kp LCTRL &kp A &kp R &kp S &kp T &kp G                                                      &kp M     &kp N   &kp E     &kp I   &kp O    &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp D &kp V     &trans    &trans         &trans    &tog QWERTY   &kp K     &kp H   &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
+	&kp LSHFT &kp Z &kp X &kp C &kp D &kp V     &trans    &trans         &to GAME  &to QWERTY    &kp K     &kp H   &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
 	                &kp LGUI &kp LALT &mo LOWER &kp SPACE &kp RET        &kp BSPC  &lt NAV SPACE &mo RAISE &kp TAB &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 
-		colemak_layer {
+		qwerty_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | ____ |   Q  |  W   |  E   |  R   |  T   |                                             |  Y   |  U   |  I   |  O   |  P   | ____ |
 // | ____ |   A  |  S   |  D   |  F   |  G   |                                             |  H   |  J   |  K   |  L   |  ;   | ____ |
@@ -49,6 +50,23 @@
 	&trans  &kp Q &kp W &kp E  &kp R  &kp T                                    &kp Y  &kp U  &kp I     &kp O   &kp P    &trans
 	&trans  &kp A &kp S &kp D  &kp F  &kp G                                    &kp H  &kp J  &kp K     &kp L   &kp SEMI &trans
 	&trans  &kp Z &kp X &kp C  &kp V  &kp B  &trans &trans       &trans &trans &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &trans
+	                    &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+		};
+
+		gaming_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | ____ |  T   |   Q  |  W   |  E   |  R   |                                             |  Y   |  U   |  I   |  O   |  P   | ____ |
+// | ____ |  G   |   A  |  S   |  D   |  F   |                                             |  H   |  J   |  K   |  L   |  ;   | ____ |
+// | ____ |  B   |   Z  |  X   |  C   |  V   | ____ | ____ |                 | ____ | ____ |  N   |  M   |  ,   |  .   |  /   | ____ |
+//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
+			bindings = <
+
+	&trans  &kp T &kp Q &kp W  &kp E  &kp R                                    &kp Y  &kp U  &kp I     &kp O   &kp P    &trans
+	&trans  &kp G &kp A &kp S  &kp D  &kp F                                    &kp H  &kp J  &kp K     &kp L   &kp SEMI &trans
+	&trans  &kp B &kp Z &kp X  &kp C  &kp V  &trans &trans       &trans &trans &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &trans
 	                    &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans
 			>;
 

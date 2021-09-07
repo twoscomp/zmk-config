@@ -26,14 +26,14 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q   |  W   |  F   |  P   |  B   |                                       |   J   |   L   |   U   |   Y   |   :   |   \   |
 // |  CTRL |  A   |  R   |  S   |  T   |  G   |                                       |   M   |   N   |   E   |   I   |   O   |   '   |
-// | SHIFT |  Z   |  X   |  C   |  D   |  V   | ____  | ____ |         | GAMG | QRTY  |   K   |   H   |   ,   |   .   |   /   | SHIFT |
+// | SHIFT |  Z   |  X   |  C   |  D   |  V   | ____  | GAMG |         | QRTY | _____ |   K   |   H   |   ,   |   .   |   /   | SHIFT |
 //                       | GUI  | ALT  | RSE  | SPACE | RET  |         | BSPC | SPACE |  LWR  |  TAB  | R-ALT |
 //                                                                              /NAV
 			bindings = <
-	&kp ESC   &kp Q &kp W &kp F &kp P &kp B                                                       &kp J     &kp L   &kp U     &kp Y   &kp SEMI &kp BSLH
-	&kp LCTRL &kp A &kp R &kp S &kp T &kp G                                                       &kp M     &kp N   &kp E     &kp I   &kp O    &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp D &kp V     &trans    &trans         &tog GAME  &tog QWERTY   &kp K     &kp H   &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
-	                &kp LGUI &kp LALT &mo RAISE &kp SPACE &kp RET        &kp BSPC   &lt NAV SPACE &mo LOWER &kp TAB &kp RALT
+	&kp ESC   &kp Q &kp W &kp F &kp P &kp B                                                         &kp J     &kp L   &kp U     &kp Y   &kp SEMI &kp BSLH
+	&kp LCTRL &kp A &kp R &kp S &kp T &kp G                                                         &kp M     &kp N   &kp E     &kp I   &kp O    &kp SQT
+	&kp LSHFT &kp Z &kp X &kp C &kp D &kp V     &trans    &tog GAME      &tog QWERTY  &trans        &kp K     &kp H   &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
+	                &kp LGUI &kp LALT &mo RAISE &kp SPACE &kp RET        &kp BSPC     &lt NAV SPACE &mo LOWER &kp TAB &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;

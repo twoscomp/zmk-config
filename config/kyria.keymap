@@ -60,14 +60,14 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | ____ |  1 ! |   Q  |  W   |  E   |  R   |                                             |  Y   |  U   |  I   |  O   |  P   | ____ |
 // | ____ |  2 @ |   A  |  S   |  D   |  F   |                                             |  H   |  J   |  K   |  L   |  ;   | ____ |
-// | ____ |  3 # |   Z  |  X   |  C   |  B   | ____ | ____ |                 | ____ | ____ |  N   |  M   |  ,   |  .   |  /   | ____ |
-//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
+// | ____ |  3 # |   Z  |  X   |  C   |  V   | ____ | ____ |                 | ____ | ____ |  N   |  M   |  ,   |  .   |  /   | ____ |
+//                      | ALT  | TAB  | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
 
-	&trans  &kp N1 &kp Q &kp W  &kp E  &kp R                                    &kp Y  &kp U  &kp I     &kp O   &kp P    &trans
-	&trans  &kp N2 &kp A &kp S  &kp D  &kp F                                    &kp H  &kp J  &kp K     &kp L   &kp SEMI &trans
-	&trans  &kp N3 &kp Z &kp X  &kp C  &kp B  &trans &trans       &trans &trans &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &trans
-	                     &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans
+	&trans  &kp N1 &kp Q &kp W  &kp E   &kp R                                    &kp Y  &kp U  &kp I     &kp O   &kp P    &trans
+	&trans  &kp N2 &kp A &kp S  &kp D   &kp F                                    &kp H  &kp J  &kp K     &kp L   &kp SEMI &trans
+	&trans  &kp N3 &kp Z &kp X  &kp C   &kp V  &trans &trans       &trans &trans &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &trans
+	                     &LALT  &kp TAB &trans &trans &trans       &trans &trans &trans &trans &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;

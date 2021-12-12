@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/twoscomp
+      url-base: https://github.cm/zmkfirmware
   projects:
     - name: zmk
       remote: zmkfirmware

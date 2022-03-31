@@ -48,10 +48,11 @@
 #define COLEMAK 0
 #define QWERTY  1
 #define GAME    2
-#define LOWER   3
-#define RAISE   4
-#define NAV     5
-#define ADJUST  6
+#define GRSE    3 // A special raise layer for main-half gaming.
+#define LOWER   4
+#define RAISE   5
+#define NAV     6
+#define ADJUST  7
 
 / {
 	keymap {
@@ -93,20 +94,38 @@
 
 		gaming_layer {
 // --------------------------------------------------------------------------------------------------------------------------------
-// | ____ |  A   |   W  |  E   |  R   |  T   |                                             | ____ |  4   |  5   |  6   | ____ | ____ |
-// | ____ |  Q   |   S  |  D   |  F   |  G   |                                             | ____ |  1   |  2   |  3   | ____ | ____ |
-// | ____ |  Z   |   X  |  C   |  V   |  B   | ____ | ____ |                 | ____ | ____ |  0   |  7   |  8   |  9   | ____ | ____ |
-//                      | ____ | LALT | TAB  | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
+//                      | LALT | TAB  | GRSE | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
 
-	&trans  &kp A &kp W &kp E   &kp R    &kp T                                    &trans &kp N4 &kp N5 &kp N6 &trans &trans
-	&trans  &kp Q &kp S &kp D   &kp F    &kp G                                    &trans &kp N1 &kp N2 &kp N3 &trans &trans
-	&trans  &kp Z &kp X &kp C   &kp V    &kp B   &trans &trans       &trans &trans &kp N0 &kp N7 &kp N8 &kp N9 &trans &trans
-	                    &trans  &kp LALT &kp TAB &trans &trans       &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans   &trans  &trans                                     &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans   &trans  &trans                                     &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans   &trans  &trans   &trans &trans       &trans &trans &trans &trans &trans &trans &trans &trans
+	                     &kp LALT &kp TAB &mo GRSE &trans &trans       &trans &trans &trans &trans &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
 		};
+		
+		gaming_raise_layer {
+// --------------------------------------------------------------------------------------------------------------------------------
+// | ____ |  1   |  2   |  3   |  4   |  5   |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
+//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
+			bindings = <
+
+	&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                   &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans
+	                     &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+		};
+		
 
 		lower_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------

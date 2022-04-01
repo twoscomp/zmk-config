@@ -64,10 +64,10 @@
             then-layer = <ADJUST>;
         };
 
-		tri_layer_2 {
-            if-layers = <GRSE LOWER>;
-            then-layer = <ADJUST>;
-        };
+		//tri_layer_2 {
+        //    if-layers = <GRSE LOWER>;
+        //    then-layer = <ADJUST>;
+        //};
     };
 };
 

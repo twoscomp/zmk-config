@@ -114,13 +114,13 @@
 // | ____ |  1   |  2   |  3   |  4   |  5   |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
 // | ____ | ____ | ____ | ____ | ____ | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
 // | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
-//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
+//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | AJST | ____ | ____ |
 			bindings = <
 
-	&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                   &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans
-	                     &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans
+	&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                   &trans     &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans                                   &trans     &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans                                   &trans     &trans &trans &trans &trans &trans
+	                     &trans &trans &trans &trans &trans       &trans &trans &mo ADJUST &trans &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;

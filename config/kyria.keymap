@@ -60,10 +60,12 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer_1 {
-            if-layers = <LOWER RAISE>;
+            if-layers = <RAISE LOWER>;
             then-layer = <ADJUST>;
         };
 
+		// Multiple conditional layers targeting the same then-layer is currently bugged.
+		// https://github.com/zmkfirmware/zmk/pull/1084
 		//tri_layer_2 {
         //    if-layers = <GRSE LOWER>;
         //    then-layer = <ADJUST>;
@@ -128,13 +130,13 @@
 		
 		gaming_raise_layer {
 // --------------------------------------------------------------------------------------------------------------------------------
-// | ____ |  1   |  2   |  3   |  4   |  5   |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
+// | F1   |  1   |  2   |  3   |  4   |  5   |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
 // | ____ | ____ | ____ | ____ | ____ | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
 // | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
 //                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
 
-	&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                   &trans &trans &trans &trans &trans &trans
+	&kp F1 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                   &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans
 	                     &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans

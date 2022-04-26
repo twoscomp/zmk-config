@@ -82,13 +82,13 @@
 // |  ESC  |  Q   |  W   |  F   |  P   |  B   |                                       |   J   |   L   |   U   |   Y   |   :   |   \   |
 // |  CTRL |  A   |  R   |  S   |  T   |  G   |                                       |   M   |   N   |   E   |   I   |   O   |   '   |
 // | SHIFT |  Z   |  X   |  C   |  D   |  V   | GAMG  | QWTY |         | DFLT | _____ |   K   |   H   |   ,   |   .   |   /   | TAB   |
-//                       | GUI  | ALT  | RSE  | SPACE | RET  |         | BSPC | SPACE |  LWR  | R-ALT |  GUI  |
+//                       | ALT  | GUI  | RSE  | SPACE | RET  |         | BSPC | SPACE |  LWR  | R-ALT |  GUI  |
 //                                                                              /NAV
 			bindings = <
 	&kp ESC   &kp Q &kp W &kp F &kp P &kp B                                                      &kp J     &kp L    &kp U     &kp Y   &kp SEMI &kp BSLH
 	&kp LCTRL &kp A &kp R &kp S &kp T &kp G                                                      &kp M     &kp N    &kp E     &kp I   &kp O    &kp SQT
 	&kp LSHFT &kp Z &kp X &kp C &kp D &kp V     &tog GAME &tog QWERTY    &to 0     &trans        &kp K     &kp H    &kp COMMA &kp DOT &kp FSLH &kp TAB
-	                &kp LGUI &kp LALT &mo RAISE &kp SPACE &kp RET        &kp BSPC  &lt NAV SPACE &mo LOWER &kp RALT &kp RGUI
+	                &kp LALT &kp LGUI &mo RAISE &kp SPACE &kp RET        &kp BSPC  &lt NAV SPACE &mo LOWER &kp RALT &kp RGUI
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -116,13 +116,13 @@
 // | ____ | ____ | ____ | ____ | ____ | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
 // | ____ | ____ | ____ | ____ | ____ | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
 // | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
-//                      | LALT | TAB  | GRSE | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
+//                      | ____ | TAB  | GRSE | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
 
-	&trans &trans &trans &trans   &trans  &trans                                     &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans   &trans  &trans                                     &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans   &trans  &trans   &trans &trans       &trans &trans &trans &trans &trans &trans &trans &trans
-	                     &kp LALT &kp TAB &mo GRSE &trans &trans       &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans  &trans                                     &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans  &trans                                     &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans  &trans   &trans &trans       &trans &trans &trans &trans &trans &trans &trans &trans
+	                     &trans &kp TAB &mo GRSE &trans &trans       &trans &trans &trans &trans &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;

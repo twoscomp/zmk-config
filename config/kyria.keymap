@@ -94,13 +94,13 @@
 // |  ESC  |  Q   |  W   |  F   |  P   |  B   |                                       |   J   |   L   |   U   |   Y   |   :   |   \   |
 // |  CTRL |  A   |  R   |  S   |  T   |  G   |                                       |   M   |   N   |   E   |   I   |   O   |   '   |
 // | SHIFT |  Z   |  X   |  C   |  D   |  V   | GAMG  | QWTY |         | DFLT | _____ |   K   |   H   |   ,   |   .   |   /   | SHIFT |
-//                       |      |      | TAB  | SPACE | RET  |         | BSPC | SPACE |  DEL  | R-ALT |  GUI  |
-//                                                                              /NAV
+//                       |      |      |      | SPACE | RET  |         | BSPC | SPACE |       | R-ALT |  GUI  |
+//                                              /NAV                            /NAV
 			bindings = <
-	&kp ESC   &kp Q      &kp W      &kp F       &kp P       &kp B                                                      &kp J     &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
-	&kp LCTRL &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                      &kp M     &hm RSHFT N &hm RCTRL E &hm RALT I &hm RGUI O &kp SQT
-	&kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V     &tog GAME &tog QWERTY    &to 0     &trans        &kp K     &kp H       &kp COMMA   &kp DOT    &kp FSLH   &kp LGUI
-	                                &kp LALT    &kp TAB     &mo RAISE &kp SPACE &kp RET        &kp BSPC  &lt NAV SPACE &mo LOWER &kp RALT    &kp RGUI
+	&kp ESC   &kp Q      &kp W      &kp F       &kp P       &kp B                                                          &kp J     &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
+	&kp LCTRL &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                          &kp M     &hm RSHFT N &hm RCTRL E &hm RALT I &hm RGUI O &kp SQT
+	&kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V     &tog GAME     &tog QWERTY    &to 0     &trans        &kp K     &kp H       &kp COMMA   &kp DOT    &kp FSLH   &kp LGUI
+	                                &kp LALT    &kp TAB     &mo RAISE &lt NAV SPACE &kp RET        &kp BSPC  &lt NAV SPACE &mo LOWER &kp RALT    &kp RGUI
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;

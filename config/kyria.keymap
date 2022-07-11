@@ -55,7 +55,7 @@
 #define SYM     5
 #define NAV     6
 #define FUN     7
-
+#define MEDIA   8
 
 
 / {
@@ -79,13 +79,13 @@
 // |  ESC  |  Q   |  W   |  F   |  P   |  B   |                                       |   J   |   L   |   U   |   Y   |   :   |   \   |
 // |  CTRL |  A   |  R   |  S   |  T   |  G   |                                       |   M   |   N   |   E   |   I   |   O   |   '   |
 // | SHIFT |  Z   |  X   |  C   |  D   |  V   | GAMG  | QWTY |         | DFLT | _____ |   K   |   H   |   ,   |   .   |   /   | SHIFT |
-//                       |      |      | Tab  | SPACE | RET  |         | BSPC | SPACE |  FUN  | R-ALT |  GUI  |
-//                                       /Num   /NAV    /SYM                    /NAV
+//                       |      | MEDIA| Tab  | SPACE | RET  |         | BSPC | SPACE |  DEL  | R-ALT |  PP   |
+//                                       /Num   /NAV    /SYM                    /NAV     /FUN
 			bindings = <
-	&kp ESC   &kp Q      &kp W      &kp F       &kp P       &kp B                                                               &kp J     &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
-	&kp LCTRL &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                               &kp M     &hm RSHFT N &hm RCTRL E &hm RALT I &hm RGUI O &kp SQT
-	&kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V          &tog GAME     &tog QWERTY    &to 0     &trans        &kp K     &kp H       &kp COMMA   &kp DOT    &kp FSLH   &kp LGUI
-	                                &none       &none       &lt NUM TAB    &lt NAV SPACE &lt SYM RET    &kp BSPC  &lt NAV SPACE &mo FUN   &kp RALT    &kp RGUI
+	&kp ESC   &kp Q      &kp W      &kp F       &kp P       &kp B                                                               &kp J         &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
+	&kp LCTRL &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                               &kp M         &hm RSHFT N &hm RCTRL E &hm RALT I &hm RGUI O &kp SQT
+	&kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V          &tog GAME     &tog QWERTY    &to 0     &trans        &kp K         &kp H       &kp COMMA   &kp DOT    &kp FSLH   &kp LGUI
+	                                &none       &mo MEDIA   &lt NUM TAB    &lt NAV SPACE &lt SYM RET    &kp BSPC  &lt NAV SPACE &lt DEL FUN   &kp RALT    &kp C_PP
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -160,7 +160,7 @@
 // | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ~    | !    | @    | #    | ____ | ____ |
 //                      | ____ | ____ | ____ | ____ | ____ |                 | ____ |  (   | )    | ____ | ____ |
 			bindings = <
-	&trans &trans &trans &trans &trans &trans                                     &kp LBRC  &kp AMPS &kp STAR  &kp LPAR  &kp RBC   &trans
+	&trans &trans &trans &trans &trans &trans                                     &kp LBRC  &kp AMPS &kp STAR  &kp LPAR  &kp RBRC  &trans
 	&trans &trans &trans &trans &trans &trans                                     &kp PLUS  &kp DLLR &kp PRCNT &kp CARET &kp UNDER &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans   &kp TILDE &kp EXCL &kp AT    &kp HASH  &trans    &trans
 	                     &trans &trans &trans &trans &trans       &trans &kp LPAR &kp RPAR  &trans   &trans
@@ -183,15 +183,29 @@
 		
 		fun_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | ____ | F12  |  F7  |  F8  |  F9  | ____ |                                             | VCC  | RTOG | ____ | ____ | ____ | ____ |
-// | ____ | F11  |  F4  |  F5  |  F6  | ____ |                                             | EFF  | SPI  | SAI  | HUI  | VAI  | ____ |
-// | ____ | F10  |  F1  |  F2  |  F3  | ____ | BLS0 | BLS1 |                 | BCLR | BNXT | EFR  | SPD  | SAD  | HUD  | VAD  | ____ |
+// | ____ | F12  |  F7  |  F8  |  F9  | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
+// | ____ | F11  |  F4  |  F5  |  F6  | ____ |                                             | ____ | ____ | ____ | ____ | ____ | ____ |
+// | ____ | F10  |  F1  |  F2  |  F3  | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
 //                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
-	&trans &kp F12 &kp F7 &kp F8 &kp F9 &trans                                                        &ext_power EP_TOG &rgb_ug RGB_TOG  &trans            &trans          &trans          &trans
-	&trans &kp F11 &kp F4 &kp F5 &kp F6 &trans                                                        &rgb_ug RGB_EFF   &rgb_ug RGB_SPI  &rgb_ug RGB_SAI   &rgb_ug RGB_HUI &rgb_ug RGB_BRI &trans
-	&trans &kp F10 &kp F1 &kp F2 &kp F3 &trans &bt BT_SEL 0 &bt BT_SEL 1       &bt BT_CLR &bt BT_NXT  &rgb_ug RGB_EFR   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD   &rgb_ug RGB_HUD &rgb_ug RGB_BRD &trans
-	                                    &trans &trans       &trans             &trans     &trans      &trans            &trans           &trans
+	&trans &kp F12 &kp F7 &kp F8 &kp F9 &trans                                              &trans &trans &trans &trans &trans &trans
+	&trans &kp F11 &kp F4 &kp F5 &kp F6 &trans                                              &trans &trans &trans &trans &trans &trans
+	&trans &kp F10 &kp F1 &kp F2 &kp F3 &trans &trans &trans                  &trans &trans &trans &trans &trans
+	                                    &trans &trans &trans                  &trans &trans &trans &trans &trans
+			>;
+		};
+	
+		media_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | VCC  | RTOG | ____ | ____ | ____ | ____   |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | EFF  | SPI  | SAI  | HUI  | VAI  | C_PREV |
+// | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | BLS0 | BLS1 | EFR  | SPD  | SAD  | HUD  | VAD  | C_NEXT |
+//                      | ____ | ____ | ____ | ____ | ____ |                 | BCLR | BNXT | ____ | ____ | ____ |
+			bindings = <
+	&trans &trans &trans &trans &trans &trans                                              &ext_power EP_TOG &rgb_ug RGB_TOG  &trans            &trans          &trans          &trans
+	&trans &trans &trans &trans &trans &trans                                              &rgb_ug RGB_EFF   &rgb_ug RGB_SPI  &rgb_ug RGB_SAI   &rgb_ug RGB_HUI &rgb_ug RGB_BRI &kp C_PREV
+    &trans &trans &trans &trans &trans &trans &trans &trans       &bt BT_SEL 0 &bt BT_SEL1 &rgb_ug RGB_EFR   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD   &rgb_ug RGB_HUD &rgb_ug RGB_BRD &kp C_NEXT
+                                       &trans &trans &trans       &bt BT_CLR   &bt BT_NXT  &trans            &trans           &trans
 			>;
 		};
 };

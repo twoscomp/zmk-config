@@ -51,10 +51,10 @@
 #define QWERTY  1
 #define GAME    2
 #define GRSE    3 // A special raise layer for main-half gaming.
-#define LOWER   4
-#define RAISE   5
+#define NUM     4
+#define SYM     5
 #define NAV     6
-#define ADJUST  7
+#define FUN     7
 
 / {
     conditional_layers {
@@ -79,7 +79,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <175>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -94,13 +94,13 @@
 // |  ESC  |  Q   |  W   |  F   |  P   |  B   |                                       |   J   |   L   |   U   |   Y   |   :   |   \   |
 // |  CTRL |  A   |  R   |  S   |  T   |  G   |                                       |   M   |   N   |   E   |   I   |   O   |   '   |
 // | SHIFT |  Z   |  X   |  C   |  D   |  V   | GAMG  | QWTY |         | DFLT | _____ |   K   |   H   |   ,   |   .   |   /   | SHIFT |
-//                       |      |      |      | SPACE | RET  |         | BSPC | SPACE |       | R-ALT |  GUI  |
-//                                              /NAV                            /NAV
+//                       |      |      | Tab  | SPACE | RET  |         | BSPC | SPACE |  FUN  | R-ALT |  GUI  |
+//                                       /Num   /NAV    /SYM                    /NAV
 			bindings = <
-	&kp ESC   &kp Q      &kp W      &kp F       &kp P       &kp B                                                          &kp J     &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
-	&kp LCTRL &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                          &kp M     &hm RSHFT N &hm RCTRL E &hm RALT I &hm RGUI O &kp SQT
-	&kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V     &tog GAME     &tog QWERTY    &to 0     &trans        &kp K     &kp H       &kp COMMA   &kp DOT    &kp FSLH   &kp LGUI
-	                                &kp LALT    &kp TAB     &mo RAISE &lt NAV SPACE &kp RET        &kp BSPC  &lt NAV SPACE &mo LOWER &kp RALT    &kp RGUI
+	&kp ESC   &kp Q      &kp W      &kp F       &kp P       &kp B                                                               &kp J     &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
+	&kp LCTRL &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                               &kp M     &hm RSHFT N &hm RCTRL E &hm RALT I &hm RGUI O &kp SQT
+	&kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V          &tog GAME     &tog QWERTY    &to 0     &trans        &kp K     &kp H       &kp COMMA   &kp DOT    &kp FSLH   &kp LGUI
+	                                &none       &none       &lt NUM TAB    &lt NAV SPACE &lt SYM RET    &kp BSPC  &lt NAV SPACE &mo FUN   &kp RALT    &kp RGUI
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -136,8 +136,6 @@
 	&trans &trans &trans &trans &trans  &trans   &trans &trans       &trans &trans &trans &trans &trans &trans &trans &trans
 	                     &trans &kp TAB &mo GRSE &trans &trans       &trans &trans &trans &trans &trans
 			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
 		};
 		
 		gaming_raise_layer {
@@ -153,43 +151,37 @@
 	&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans
 	                     &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans
 			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
 		};
 		
 
-		lower_layer {
+		num {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | ____ | ____ | ____ | VUP  | ____ | ____ |                                             | / ?  | 7 &  | 8 *  | 9 (  |  - _ | ____ |
-// | ____ | ____ | PREV | PLAY | NEXT | ____ |                                             | *    | 4 $  | 5 %  | 6 ^  |  , < | ____ |
-// | ____ | ____ | ____ | VDWN | MUTE | ____ | ____ | ____ |                 | ____ | ____ | 0 )  | 1 !  | 2 @  | 3 #  |  = + | ____ |
-//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | [ {  | 7 &  | 8 *  | 9 (  |  ] } | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | = +  | 4 $  | 5 %  | 6 ^  |  - _ | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ` ~  | 1 !  | 2 @  | 3 #  | ____ | ____ |
+//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ |  0 ( | ____ | ____ | ____ |
 			bindings = <
-	&trans  &trans &trans     &kp C_VOL_UP &trans     &trans                                        &kp FSLH &kp N7 &kp N8 &kp N9 &kp MINUS &trans
-	&trans  &trans &kp C_PREV &kp C_PP     &kp C_NEXT &trans                                        &kp STAR &kp N4 &kp N5 &kp N6 &kp COMMA &trans
-	&trans  &trans &trans     &kp C_VOL_DN &kp C_MUTE &trans     &trans &trans       &trans  &trans &kp N0   &kp N1 &kp N2 &kp N3 &kp EQUAL &trans
-	                          &trans       &trans     &trans     &trans &trans       &trans  &trans &trans   &trans &trans
+	&trans &trans &trans &trans &trans &trans                                   &kp LBKT  &kp N7 &kp N8 &kp N9 &kp RBKT  &trans
+	&trans &trans &trans &trans &trans &trans                                   &kp EQUAL &kp N4 &kp N5 &kp N6 &kp MINUS &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans &kb GRAVE &kp N1 &kp N2 &kp N3 &trans    &trans
+	                     &trans &trans &trans &trans &trans       &trans &kp N0 &trans    &trans &trans
 			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+		};
+		
+        symbol {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | {    | &    | *    | (    |  }   | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ |                                             | +    | $    | %    | ^    |  _   | ____ |
+// | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ~    | !    | @    | #    | ____ | ____ |
+//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ |  (   | )    | ____ | ____ |
+			bindings = <
+	&trans &trans &trans &trans &trans &trans                                     &kp LBRC  &kp AMPS &kp STAR  &kp LPAR  &kp RBC   &trans
+	&trans &trans &trans &trans &trans &trans                                     &kp PLUS  &kp DLLR &kp PRCNT &kp CARET &kp UNDER &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans   &kp TILDE &kp EXCL &kp AT    &kp HASH  &trans    &trans
+	                     &trans &trans &trans &trans &trans       &trans &kp LPAR &kp RPAR  &trans   &trans
+			>;
 		};
 	
-		raise_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// | ____ |  !   |  @   |  {   |  }   |  |   |                                             | ____ |  _   | ____ | ____ | ____ |  \   |
-// | ____ |  #   |  $   |  (   |  )   |  `   |                                             |  +   |  -   |  /   |  *   |  %   | ' "  |
-// | ____ |  %   |  ^   |  [   |  ]   |  ~   | ____ | ____ |                 | ____ | ____ |  &   |  =   |  ,   |  .   | / ?  | - _  |
-//                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
-			bindings = <
-	&trans  &kp EXCL  &kp AT    &kp LBRC &kp RBRC &kp PIPE                                     &trans     &kp UNDER    &trans       &trans     &trans    &kp BSLH
-	&trans  &kp HASH  &kp DLLR  &kp LPAR &kp RPAR &kp GRAVE                                    &kp PLUS   &kp KP_MINUS &kp KP_SLASH &kp STAR   &kp PRCNT &kp SQT
-	&trans  &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp TILDE &trans &trans       &trans  &trans &kp AMPS   &kp EQUAL    &kp COMMA    &kp DOT    &kp FSLH  &kp MINUS
-	                            &trans   &trans   &trans    &trans &trans       &kp DEL &trans &trans     &trans       &trans
-			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
-		};
-
 		nav_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | ____ | ____ | ____ | ____ | ____ | ____ |                                             | Home | PgDn | PgUp | End  | ____ | Slck |
@@ -202,24 +194,19 @@
 	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans    &trans    &trans    &trans &trans
 	                     &trans &trans &trans &trans &trans       &trans &trans  &trans    &trans    &trans
 			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
 		};
-
-		adjust_layer {
+		
+		fun_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | VCC  | RTOG | ____ | ____ | ____ | ____ |                                             | ____ |  F7  |  F8  |  F9  | F10  | ____ |
-// | EFF  | SPI  | SAI  | HUI  | VAI  | ____ |                                             | ____ |  F4  |  F5  |  F6  | F11  | ____ |
-// | EFR  | SPD  | SAD  | HUD  | VAD  | ____ | BLS0 | BLS1 |                 | BCLR | BNXT | ____ |  F1  |  F2  |  F3  | F12  | ____ |
+// | ____ | F12  |  F7  |  F8  |  F9  | ____ |                                             | VCC  | RTOG | ____ | ____ | ____ | ____ |
+// | ____ | F11  |  F4  |  F5  |  F6  | ____ |                                             | EFF  | SPI  | SAI  | HUI  | VAI  | ____ |
+// | ____ | F10  |  F1  |  F2  |  F3  | ____ | BLS0 | BLS1 |                 | BCLR | BNXT | EFR  | SPD  | SAD  | HUD  | VAD  | ____ |
 //                      | ____ | ____ | ____ | ____ | ____ |                 | ____ | ____ | ____ | ____ | ____ |
 			bindings = <
-	&ext_power EP_TOG &rgb_ug RGB_TOG  &trans            &trans          &trans          &trans                                                        &trans &kp F7 &kp F8 &kp F9 &kp F10 &trans
-	&rgb_ug RGB_EFF   &rgb_ug RGB_SPI  &rgb_ug RGB_SAI   &rgb_ug RGB_HUI &rgb_ug RGB_BRI &trans                                                        &trans &kp F4 &kp F5 &kp F6 &kp F11 &trans
-	&rgb_ug RGB_EFR   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD   &rgb_ug RGB_HUD &rgb_ug RGB_BRD &trans &bt BT_SEL 0 &bt BT_SEL 1        &bt BT_CLR &bt BT_NXT &trans &kp F1 &kp F2 &kp F3 &kp F12 &trans
-                                           &trans            &trans          &trans          &trans &trans       &trans              &trans     &trans     &trans &trans
+	&trans &kp F12 &kp F7 &kp F8 &kp F9 &trans                                                        &ext_power EP_TOG &rgb_ug RGB_TOG  &trans            &trans          &trans          &trans
+	&trans &kp F11 &kp F4 &kp F5 &kp F6 &trans                                                        &rgb_ug RGB_EFF   &rgb_ug RGB_SPI  &rgb_ug RGB_SAI   &rgb_ug RGB_HUI &rgb_ug RGB_BRI &trans
+	&trans &kp F10 &kp F1 &kp F2 &kp F3 &trans &bt BT_SEL 0 &bt BT_SEL 1       &bt BT_CLR &bt BT_NXT  &rgb_ug RGB_EFR   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD   &rgb_ug RGB_HUD &rgb_ug RGB_BRD &trans
+	                                    &trans &trans       &trans             &trans     &trans      &trans            &trans           &trans
 			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
 		};
-	};
 };

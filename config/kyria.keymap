@@ -56,22 +56,7 @@
 #define NAV     6
 #define FUN     7
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer_1 {
-            if-layers = <RAISE LOWER>;
-            then-layer = <ADJUST>;
-        };
 
-		// Multiple conditional layers targeting the same then-layer is currently bugged.
-		// https://github.com/zmkfirmware/zmk/pull/1084
-		//tri_layer_2 {
-        //    if-layers = <GRSE LOWER>;
-        //    then-layer = <ADJUST>;
-        //};
-    };
-};
 
 / {
      behaviors {

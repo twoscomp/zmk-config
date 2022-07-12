@@ -88,7 +88,7 @@
 	                                &none       &mo MEDIA   &lt NUM TAB    &lt NAV SPACE &lt SYM RET    &kp BSPC  &lt NAV SPACE &lt FUN DEL &kp RALT    &kp C_PP
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		qwerty_layer {
@@ -105,7 +105,7 @@
 	                    &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		gaming_layer {

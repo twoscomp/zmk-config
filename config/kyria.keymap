@@ -59,7 +59,7 @@
 
 
 / {
-     behaviors {
+    behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -208,4 +208,5 @@
                          &trans &trans &trans &trans &trans       &bt BT_CLR   &bt BT_NXT   &trans            &trans           &trans
 			>;
 		};
+	};	
 };

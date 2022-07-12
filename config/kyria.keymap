@@ -84,7 +84,7 @@
 			bindings = <
 	&kp ESC   &kp Q      &kp W      &kp F       &kp P       &kp B                                                         &kp J       &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
 	&kp LCTRL &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G                                                         &kp M       &hm RSHFT N &hm RCTRL E &hm RALT I &hm RGUI O &kp SQT
-	&kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V       &tog GAME &tog QWERTY   &to COLEMAK &trans        &kp K       &kp H       &kp COMMA   &kp DOT    &kp FSLH   &kp LGUI
+	&kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V       &tog GAME &tog QWERTY   &to COLEMAK &trans        &kp K       &kp H       &kp COMMA   &kp DOT    &kp FSLH   &kp RSHFT
 	                                &none       &mo MEDIA   &lt NUM TAB &kp SPACE &lt SYM RET   &kp BSPC    &lt NAV SPACE &lt FUN DEL &kp RALT    &kp C_PP
 			>;
 

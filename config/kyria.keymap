@@ -148,7 +148,7 @@
 			bindings = <
 	&trans &trans &trans &trans &trans &trans                                   &kp LBKT  &kp N7 &kp N8 &kp N9 &kp RBKT  &trans
 	&trans &trans &trans &trans &trans &trans                                   &kp EQUAL &kp N4 &kp N5 &kp N6 &kp MINUS &trans
-	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans &kb GRAVE &kp N1 &kp N2 &kp N3 &trans    &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans       &trans &trans &kp GRAVE &kp N1 &kp N2 &kp N3 &trans    &trans
 	                     &trans &trans &trans &trans &trans       &trans &kp N0 &trans    &trans &trans
 			>;
 		};
@@ -205,7 +205,7 @@
 	&trans &trans &trans &trans &trans &trans                                               &ext_power EP_TOG &rgb_ug RGB_TOG &trans          &trans          &trans          &trans
 	&trans &trans &trans &trans &trans &trans                                               &rgb_ug RGB_EFF   &rgb_ug RGB_SPI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &kp C_PREV
     &trans &trans &trans &trans &trans &trans &trans &trans       &bt BT_SEL 0 &bt BT_SEL 1 &rgb_ug RGB_EFR   &rgb_ug RGB_SPD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &kp C_NEXT
-                         &trans &trans &trans &trans &trans       &bt BT_CLR   &bt BT_NXT   &trans            &trans           &trans
+                         &trans &trans &trans &trans &trans       &bt BT_CLR   &bt BT_NXT   &trans            &trans          &trans
 			>;
 		};
 	};	
